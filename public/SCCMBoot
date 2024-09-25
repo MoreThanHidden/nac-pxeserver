@@ -1,0 +1,13 @@
+#!ipxe
+
+echo Booting SCCM Boot Image
+kernel http://[PXEServerIP]:4433/wimboot.x86_64.efi
+initrd http://[PXEServerIP]:4433/changeStartOptions.js             changeStartOptions.js
+initrd http://[PXEServerIP]:4433/winpeshl.ini                      winpeshl.ini
+initrd http://[PXEServerIP]:4433/SMS/Data/TsmBootstrap.ini         TsmBootstrap.ini
+initrd http://[PXEServerIP]:4433/SMS/Data/Variables.dat            Variables.dat
+initrd http://[PXEServerIP]:4433/Boot/BCD                          BCD
+initrd http://[PXEServerIP]:4433/Boot/boot.sdi                     boot.sdi
+initrd http://[PXEServerIP]:4433/sources/boot.wim                  boot.wim
+boot || goto failed
+goto start

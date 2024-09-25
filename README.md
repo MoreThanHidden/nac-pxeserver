@@ -1,0 +1,2 @@
+## Basic PXE Boot Server (TFTP / HTTP) using Rust
+Using [tftpd](https://crates.io/crates/tftpd) and [tide](https://crates.io/crates/tide) to create a basic PXE Boot Server in Rust that can handle authentication and run scripts on the server.
